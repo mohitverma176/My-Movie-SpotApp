@@ -188,7 +188,7 @@ const handlefav=(movie)=>{
                 <p className="movie-card-date">{m.release_date?.substring(0, 4)}</p>
               </div>
               <div className='button-wrapper' style={{display:'flex',width:'100%',justifyContent:'center'}}>
-                <button href='#' className='material-symbols-outlined fav-icon' onClick={()=>handlefav(m)}>{favourite.some((fav) => fav.id === m.id) ?"favorite":"heart_broken"}</button>
+                <button  className='material-symbols-outlined fav-icon' onClick={()=>handlefav(m)}>{favourite.some((fav) => fav.id === m.id) ?"favorite":"heart_broken"}</button>
                 </div> 
             </div>
           ))}
@@ -197,11 +197,11 @@ const handlefav=(movie)=>{
       <div style={{display:'flex',justifyContent:'center'}}>
             <nav aria-label="Page navigation example">
         <ul class="pagination">
-          <li class="page-item"><button class="page-link" onClick={previouspage} href='#'>Previous</button></li>
+          <li class="page-item"><button class="page-link" onClick={previouspage} >Previous</button></li>
          { page.map((p)=>(
-            <li key={p} class="page-item"><button className="page-link" href="#"  style={{background: currpage === p ? "red" : "white"}} onClick={()=>thatpage(p)}>{p}</button></li>
+            <li key={p} class="page-item"><button className="page-link" style={{background: currpage === p ? "red" : "white"}} onClick={()=>thatpage(p)}>{p}</button></li>
           ))}
-          <li class="page-item"><button class="page-link" onClick={nextpage} href='#'>Next</button></li>
+          <li class="page-item"><button class="page-link" onClick={nextpage} >Next</button></li>
         </ul>
       </nav>
     </div>
