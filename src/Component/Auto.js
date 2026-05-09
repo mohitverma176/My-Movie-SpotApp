@@ -3,10 +3,7 @@ import axios from 'axios';
 export default function Auto({ favourite, setFavourite,currpage,setcurrpage, currtext, setcurrtext, openSearchBar, setopenbar}) {
   const [movie,setmovie]=useState([]);
   const [index,setintex]=useState(0);
-  const [hover,sethover]=useState('');
  let  [page,setpage]=useState([1]);
-
- const [limit,setentry]=useState(20);
  const [selectmovie,setselectmovie]=useState(null);
  setopenbar(currtext===''?true:false);
 
