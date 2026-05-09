@@ -108,10 +108,13 @@ const handlefav=(movie)=>{
       
       <div className="movie-img">
         {movie.length > 0 && movie[index] &&
-          <img 
+          <><img 
             src={`https://image.tmdb.org/t/p/original${filtarr[index]?.backdrop_path}`} 
             alt={filtarr[index]?.title} 
           />
+          <h1 className='movie-tittle'>{filtarr[index]?.title}</h1>
+          <h4 className='movie-view'>{filtarr[index]?.overview}</h4>
+         </>
         }    
       </div>
 
@@ -164,7 +167,7 @@ const handlefav=(movie)=>{
 
           {filtarr.map((m) => (
             <div key={m.id} className="movie-card" >
-              <div className="movie-card-img-wrapper"  onMouseEnter={()=>sethover(m.id)} onMouseLeave={()=>sethover('')} >
+              <div className="movie-card-img-wrapper"   >
                 <img 
                   src={`https://image.tmdb.org/t/p/original${m.poster_path}`} 
                   alt={m.title} 
