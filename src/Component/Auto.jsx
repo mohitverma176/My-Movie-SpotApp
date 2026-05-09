@@ -47,7 +47,7 @@ export default function Auto({ favourite, setFavourite,currpage,setcurrpage, cur
       if (movie.length === 0) return;
       const interval=setInterval(()=>{
        setintex((prev)=> (prev + 1) % movie.length); 
-  },4000) // 4 seconds is a better viewing interval
+  },4000) // 4 seconds is button better viewing interval
   return ()=> clearInterval(interval);
     },[movie]);
      
@@ -175,7 +175,7 @@ const handlefav=(movie)=>{
                   onClick={()=>overallpage(m)}
                 />
                 <div className="movie-card-overlay">
-                  {/* Hardcoded star text in span since Material symbols may need to be imported or use a simple HTML star */}
+                  {/* Hardcoded star text in span since Material symbols may need to be imported or use button simple HTML star */}
                   <span style={{ color: '#fbbf24' }}>★</span>
                   <span>{m.vote_average?.toFixed(1)}</span>
                 </div>
@@ -188,7 +188,7 @@ const handlefav=(movie)=>{
                 <p className="movie-card-date">{m.release_date?.substring(0, 4)}</p>
               </div>
               <div className='button-wrapper' style={{display:'flex',width:'100%',justifyContent:'center'}}>
-                <a href='#' className='material-symbols-outlined fav-icon' onClick={()=>handlefav(m)}>{favourite.some((fav) => fav.id === m.id) ?"favorite":"heart_broken"}</a>
+                <button href='#' className='material-symbols-outlined fav-icon' onClick={()=>handlefav(m)}>{favourite.some((fav) => fav.id === m.id) ?"favorite":"heart_broken"}</button>
                 </div> 
             </div>
           ))}
@@ -197,11 +197,11 @@ const handlefav=(movie)=>{
       <div style={{display:'flex',justifyContent:'center'}}>
             <nav aria-label="Page navigation example">
         <ul class="pagination">
-          <li class="page-item"><a class="page-link" onClick={previouspage} href='#'>Previous</a></li>
+          <li class="page-item"><button class="page-link" onClick={previouspage} href='#'>Previous</button></li>
          { page.map((p)=>(
-            <li key={p} class="page-item"><a className="page-link" href="#"  style={{background: currpage === p ? "red" : "white"}} onClick={()=>thatpage(p)}>{p}</a></li>
+            <li key={p} class="page-item"><button className="page-link" href="#"  style={{background: currpage === p ? "red" : "white"}} onClick={()=>thatpage(p)}>{p}</button></li>
           ))}
-          <li class="page-item"><a class="page-link" onClick={nextpage} href='#'>Next</a></li>
+          <li class="page-item"><button class="page-link" onClick={nextpage} href='#'>Next</button></li>
         </ul>
       </nav>
     </div>
