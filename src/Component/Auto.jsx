@@ -52,7 +52,7 @@ export default function Auto({ favourite, setFavourite,currpage,setcurrpage, cur
     },[movie]);
      
   let previouspage=()=>{
-    if(currpage!=1){
+    if(currpage!==1){
       setcurrpage((prev)=> prev-1);
     }
 
@@ -74,7 +74,7 @@ export default function Auto({ favourite, setFavourite,currpage,setcurrpage, cur
 };
 
 
-if(currtext==''){
+if(currtext===''){
   filtarr=[...movie];
 }
 else{
@@ -188,7 +188,7 @@ const handlefav=(movie)=>{
                 <p className="movie-card-date">{m.release_date?.substring(0, 4)}</p>
               </div>
               <div className='button-wrapper' style={{display:'flex',width:'100%',justifyContent:'center'}}>
-                <a className='material-symbols-outlined fav-icon' onClick={()=>handlefav(m)}>{favourite.some((fav) => fav.id === m.id) ?"favorite":"heart_broken"}</a>
+                <a href='#' className='material-symbols-outlined fav-icon' onClick={()=>handlefav(m)}>{favourite.some((fav) => fav.id === m.id) ?"favorite":"heart_broken"}</a>
                 </div> 
             </div>
           ))}

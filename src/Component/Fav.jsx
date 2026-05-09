@@ -6,7 +6,7 @@ export function One({ isOpen, setIsOpen, favourite, setFavourite, currpage, setc
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("movie-app") || "[]");
     setFavourite(data); // ✅ array
-  }, []);
+  }, [setFavourite]);
 
   const handlefav = (movie) => {
     let olddata = JSON.parse(localStorage.getItem("movie-app") || "[]");
